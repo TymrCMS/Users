@@ -143,7 +143,9 @@ class UsersController extends AdminController
         
         $user->email = $request->email; 
 
-        
+        $user->group_id = $request->group_id;
+
+        // check password
         if($request->password !== null)
         {
             if(\Tymr\Core\Security\PasswordValidator::check($request->password))
