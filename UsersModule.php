@@ -30,15 +30,13 @@ class UsersModule extends Module
 
     public function install()
     {
-
         $status = \Tymr\Modules\Navigation\Models\InstallLink::firstOrCreate(
 			['title'       => 'Profile'],
 			[
                 'description' => 'User profile',
 			    'icon'        => 'fa fa-circle-o text-aqua',
 			    'type'        => 'uri',
-			    'url'         => '/',
-			    'uri'         => 'Users/profile',
+			    'url'         => 'Users/profile',
 			    'order'       => 100,
 			    'permission'  => 'update-profile|deactivate-profile',
 			    'module'      => $this->info['slug'],
@@ -49,7 +47,6 @@ class UsersModule extends Module
         );
 
         return true;
-
     }
 
     public function uninstall()

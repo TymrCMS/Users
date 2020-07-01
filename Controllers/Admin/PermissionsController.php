@@ -20,7 +20,7 @@ class PermissionsController extends AdminController
 
     public function __construct(\Tymr\Modules\Users\UsersModule $m)
 	{
-		parent::__construct($m);
+		parent::__construct( $m );
 	}
 
 	public function index()

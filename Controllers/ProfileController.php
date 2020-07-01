@@ -19,7 +19,7 @@ class ProfileController extends PublicController
 
     public function __construct(\Tymr\Modules\Users\UsersModule $m)
     {
-        parent::__construct($m);
+        parent::__construct( $m );
     }
     
     /**

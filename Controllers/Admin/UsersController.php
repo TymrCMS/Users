@@ -22,7 +22,7 @@ class UsersController extends AdminController
 
     public function __construct(\Tymr\Modules\Users\UsersModule $m)
     {
-        parent::__construct($m);
+        parent::__construct( $m );
     }
 
     /**
@@ -32,9 +32,9 @@ class UsersController extends AdminController
      */
     public function index()
     {
-        $perpage = Settings::where('slug','results_per_page')->first()->value;
-        
-        $users = User::orderBy('id','desc')->paginate($perpage);
+        // @todo: This needs to be loaded once in admin controller
+        //$perpage = Settings::where('slug','results_per_page')->first()->value;
+        $users = User::orderBy('id','desc')->paginate( $this->results_perpage );
 
         return view("Users::users.index")->withUsers($users);
     }
