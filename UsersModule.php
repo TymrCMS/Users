@@ -30,7 +30,7 @@ class UsersModule extends Module
 
     public function install()
     {
-        $status = \Tymr\Modules\Navigation\Models\InstallLink::firstOrCreate(
+        $status = \Tymr\Modules\Navigation\Models\AvailableLinks::firstOrCreate(
 			['title'       => 'Profile'],
 			[
                 'description' => 'User profile',
@@ -51,7 +51,7 @@ class UsersModule extends Module
 
     public function uninstall()
     {
-        \Tymr\Modules\Navigation\Models\InstallLink::where('module',$this->info['slug'])->delete();
+        \Tymr\Modules\Navigation\Models\AvailableLinks::where('module',$this->info['slug'])->delete();
 
         return true;
     }
