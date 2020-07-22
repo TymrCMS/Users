@@ -14,7 +14,7 @@ class UsersModule extends Module
     public $info = [
         'name'          => 'Users',
         'description'   => 'Users Module',
-        'version'       => '1.0',
+        'version'       => '1.0.0',
         'slug'          => 'users',
     ];
 
