@@ -9,7 +9,7 @@ use Tymr\Http\Controllers\PublicController;
 class DashboardController extends PublicController
 {
 
-	public function __construct(\Tymr\Modules\Users\UsersModule $m)
+	public function __construct( \Tymr\Modules\Users\UsersModule $m )
 	{
 		parent::__construct( $m );
 	}

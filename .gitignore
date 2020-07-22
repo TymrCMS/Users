@@ -1,1 +1,9 @@
+#
+# Do not track the routes.
+# These are kept in Storage/Routes/web.php
+#
+Routes/*
+Routes/web.php
+!Routes/.gitkeep
+
 /dev
