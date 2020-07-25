@@ -115,11 +115,11 @@ class RolesController extends AdminController
 
         if(!$role->is_core) 
         {
-            $role->name = Input::get('name'); 
+            $role->name = Request::input('name'); 
         }  
 
-        $role->display_name = Input::get('display_name'); 
-        $role->description = Input::get('description');
+        $role->display_name = Request::input('display_name'); 
+        $role->description = Request::input('description');
 
         if($role->save())
         {

@@ -4,7 +4,8 @@ namespace Tymr\Modules\Users\Controllers\Admin;
 
 use Validator;
 use Redirect;
-use Illuminate\Support\Facades\Input;
+// Removed since upgrade to L6.x
+//use Illuminate\Support\Facades\Input;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 

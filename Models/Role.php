@@ -1,8 +1,7 @@
 <?php
 
 namespace Tymr\Modules\Users\Models;
-
-use Laratrust\LaratrustRole;
+use Laratrust\Models\LaratrustRole;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Role extends LaratrustRole

@@ -4,7 +4,9 @@ namespace Tymr\Modules\Users\Controllers\Admin;
 
 //use Validator;
 use Redirect;
-use Illuminate\Support\Facades\Input;
+
+// Removed since upgrade to L6.x
+//use Illuminate\Support\Facades\Input;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Tymr\Http\Controllers\AdminController;
@@ -84,8 +86,8 @@ class GroupsController extends AdminController
 	 */
 	public function update(Request $request, Group $group)
 	{ 
-		$group->name = Input::get('name'); 
-		$group->description = Input::get('description');
+		$group->name = Request::input('name'); 
+		$group->description = Request::input('description');
 
 		if($group->save())
 		{
