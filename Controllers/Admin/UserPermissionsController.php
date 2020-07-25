@@ -39,7 +39,7 @@ class UserPermissionsController extends AdminController
      * 
      * @param  UserPermissionsRequest $request Inbound request and validation
      * @param  User                   $user    The user we are updating
-     * @return null                            Redirect to users page
+     * @return NULL                            Redirect to users page
      */
     public function savePermissions(UserPermissionsRequest $request, User $user)
     {

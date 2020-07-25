@@ -29,14 +29,14 @@ class ProfileController extends PublicController
      * @param  [type]  $username [description]
      * @return [type]            [description]
      */
-    public function index( Request $request , $username = null )
+    public function index( Request $request , $username = NULL )
     {
         // Current User
         //dd($this->user);
         $user = $this->user; // User::findOrFail( Auth::user()->id );
-        $person = null;
+        $person = NULL;
 
-        if($username === null || $this->user->username === $username) 
+        if($username === NULL || $this->user->username === $username) 
         {
             $person = $this->user;
         } 
@@ -44,7 +44,7 @@ class ProfileController extends PublicController
         {
             $person = User::where( 'username' , $username )->first();
 
-            if($person === null)
+            if($person === NULL)
             {
                 Session::flash('error','Unable to find profile.');
                 return redirect()->route('users.profile');

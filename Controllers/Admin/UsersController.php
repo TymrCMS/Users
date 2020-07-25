@@ -64,7 +64,7 @@ class UsersController extends AdminController
         $user->username = $request->username;
 
         $user->email = $request->email;
-        $user->last_login = null;
+        $user->last_login = NULL;
         $user->group_id = $request->group_id;
         $user->active = ($request->active)?true:false;
         $user->is_core = false;
@@ -87,11 +87,11 @@ class UsersController extends AdminController
             $userProfile->display_name = $user->username;
             $userProfile->first_name = $user->username;
             $userProfile->last_name = $user->username;
-            $userProfile->dob = null;
-            $userProfile->gender = null;
-            $userProfile->phone = null;
-            $userProfile->mobile = null;
-            $userProfile->dob = null;
+            $userProfile->dob = NULL;
+            $userProfile->gender = NULL;
+            $userProfile->phone = NULL;
+            $userProfile->mobile = NULL;
+            $userProfile->dob = NULL;
             $userProfile->user()->associate($user);            
             $userProfile->save();
 
@@ -146,7 +146,7 @@ class UsersController extends AdminController
         $user->group_id = $request->group_id;
 
         // check password
-        if($request->password !== null)
+        if($request->password !== NULL)
         {
             if(\Tymr\Core\Security\PasswordValidator::check($request->password))
             {
