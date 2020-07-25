@@ -17,7 +17,7 @@ class DashboardController extends PublicController
 	public function index(Request $request)
 	{
 		
-		return view("Users::dashboard.default");
+		return view("users::dashboard.default");
 	}
 
 }

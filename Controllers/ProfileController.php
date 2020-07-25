@@ -71,7 +71,7 @@ class ProfileController extends PublicController
     {
         View::share(['person'=> $this->user ]);
 
-        return view("Users::profile.edit");
+        return view("users::profile.edit");
     }
 
 

@@ -18,6 +18,6 @@ class DashboardController extends AdminController
     */
     public function index()
     {
-        return view("Users::dashboard");
+        return view("users::dashboard");
     }
 }

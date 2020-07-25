@@ -16,7 +16,7 @@ class InfoPageController extends PublicController
 
     public function index(Request $request)
     {
-        return view("Users::guest");
+        return view("users::guest");
     }
 
 }

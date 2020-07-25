@@ -30,25 +30,25 @@ class PermissionsController extends AdminController
 
 		$permissions = Permission::orderBy('id','asc')->paginate($perpage);
 
-		return view("Users::permissions.index")->withPermissions($permissions);
+		return view("users::permissions.index")->withPermissions($permissions);
 	}
 
 
 	public function create()
 	{ 
-		return view("Users::permissions.create");
+		return view("users::permissions.create");
 	}
 
 
 	public function show(Permission $permission)
 	{
-		return view("Users::permissions.show")->withPermission($permission);
+		return view("users::permissions.show")->withPermission($permission);
 	}
 
 
 	public function edit(Permission $permission)
 	{
-		return view("Users::permissions.edit")->withPermission($permission);
+		return view("users::permissions.edit")->withPermission($permission);
 	}
 
 	public function update(PermissionsRequest $request, $id)

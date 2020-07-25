@@ -29,13 +29,13 @@ class GroupsController extends AdminController
 
 		$groups = Group::orderBy('id','asc')->paginate($perpage);
 		
-		return view("Users::groups.index")->withGroups($groups);
+		return view("users::groups.index")->withGroups($groups);
 	}
 
 
 	public function create()
 	{ 
-		return view("Users::groups.create");
+		return view("users::groups.create");
 	}
 
 	public function store(GroupsRequest $request)
@@ -63,7 +63,7 @@ class GroupsController extends AdminController
 	 */
 	public function show(Group $group)
 	{        
-		return view("Users::groups.show")->withGroup($group);
+		return view("users::groups.show")->withGroup($group);
 	}
 
 	/**
@@ -74,7 +74,7 @@ class GroupsController extends AdminController
 	 */
 	public function edit(Group $group)
 	{
-		return view("Users::groups.edit")->withGroup($group);
+		return view("users::groups.edit")->withGroup($group);
 	}
 
 	/**

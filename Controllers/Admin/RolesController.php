@@ -37,7 +37,7 @@ class RolesController extends AdminController
 
         $roles = Role::orderBy('id','asc')->paginate($perpage);
         
-        return view("Users::roles.index")->withRoles($roles);
+        return view("users::roles.index")->withRoles($roles);
     }
 
 
@@ -48,7 +48,7 @@ class RolesController extends AdminController
      */
     public function create()
     { 
-        return view("Users::roles.create");
+        return view("users::roles.create");
     }
 
     /**
@@ -87,7 +87,7 @@ class RolesController extends AdminController
     {        
         $permissions = Permission::all();
 
-        return view("Users::roles.show")->withRole($role)->withPermissions($permissions);        
+        return view("users::roles.show")->withRole($role)->withPermissions($permissions);        
     }
 
     /**
@@ -100,7 +100,7 @@ class RolesController extends AdminController
     {
         $permissions = Permission::all();
 
-        return view("Users::roles.edit")->withRole($role)->withPermissions($permissions); 
+        return view("users::roles.edit")->withRole($role)->withPermissions($permissions); 
     }
 
     /**
