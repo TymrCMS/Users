@@ -36,7 +36,7 @@ class UsersModule extends Module
 			    'type'        => 'uri',
 			    'url'         => 'Users/profile',
 			    'order'       => 100,
-			    'permission'  => 'update-profile|deactivate-profile',
+			    'permission'  => 'profile-update|profile-access',
 			    'module'      => $this->info['slug'],
 			    'data'        => '',
 			    'css_id'      => '',

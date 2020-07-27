@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
 
 use Tymr\Http\Controllers\AdminController;
-use Tymr\Modules\Settings\Models\Settings;
+use SettingsHelper;
 use Tymr\Modules\Users\Models\User as User;
 use Tymr\Modules\Users\Models\Role as Role;
 use Tymr\Modules\Users\Models\Permission as Permission;
@@ -33,7 +33,7 @@ class RolesController extends AdminController
      */
     public function index()
     {
-        $perpage = Settings::where('slug','results_per_page')->first()->value;
+        $perpage = SettingsHelper::value('results_per_page');
 
         $roles = Role::orderBy('id','asc')->paginate($perpage);
         

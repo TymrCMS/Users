@@ -57,7 +57,7 @@ class ProfileController extends PublicController
         event(new UserLoaded($person));
 
 
-        return view('Users::profile.view')->withPerson($person);
+        return view('users::profile.view')->withPerson($person);
     }
 
 

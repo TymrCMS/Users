@@ -9,7 +9,6 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
 
 use Tymr\Http\Controllers\AdminController;
-use Tymr\Modules\Settings\Models\Settings;
 use Tymr\Modules\Users\Models\User as User;
 use Tymr\Modules\Users\Models\Role as Role;
 use Tymr\Modules\Users\Models\Group as Group;
@@ -20,7 +19,7 @@ use Tymr\Modules\Users\Models\Permission as Permission;
 class UsersController extends AdminController
 {
 
-    public function __construct(\Tymr\Modules\Users\UsersModule $m)
+    public function __construct( \Tymr\Modules\Users\UsersModule $m )
     {
         parent::__construct( $m );
     }

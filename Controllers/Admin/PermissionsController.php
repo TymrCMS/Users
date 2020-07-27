@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
 use Tymr\Http\Controllers\AdminController;
-use Tymr\Modules\Settings\Models\Settings;
+use SettingsHelper;
 use Tymr\Modules\Users\Models\User as User;
 use Tymr\Modules\Users\Models\Permission as Permission;
 use Tymr\Modules\Users\Requests\PermissionsRequest;
@@ -26,7 +26,7 @@ class PermissionsController extends AdminController
 
 	public function index()
 	{
-		$perpage = Settings::where('slug','results_per_page')->first()->value;
+		$perpage = SettingsHelper::value('results_per_page');
 
 		$permissions = Permission::orderBy('id','asc')->paginate($perpage);
 
