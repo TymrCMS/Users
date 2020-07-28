@@ -35,7 +35,7 @@ class UsersController extends AdminController
         //$perpage = Settings::where('slug','results_per_page')->first()->value;
         $users = User::orderBy('id','desc')->paginate( $this->results_perpage );
 
-        return view("users::users.index")->withUsers($users);
+        return view("users::admin.users.index")->withUsers($users);
     }
 
 
@@ -48,7 +48,7 @@ class UsersController extends AdminController
     {
         $groups = Group::all();
 
-        return view("users::users.create")->withGroups($groups);
+        return view("users::admin.users.create")->withGroups($groups);
     }
 
     /**
@@ -112,7 +112,7 @@ class UsersController extends AdminController
     {
         $groups = Group::pluck('name', 'id');
 
-        return view("users::users.show")->withUser($user)->withGroups($groups);          
+        return view("users::admin.users.show")->withUser($user)->withGroups($groups);          
     }
 
     /**
@@ -125,7 +125,7 @@ class UsersController extends AdminController
     {
         $groups = Group::pluck('name', 'id');
 
-        return view("users::users.edit")->withUser($user)->withGroups($groups);        
+        return view("users::admin.users.edit")->withUser($user)->withGroups($groups);        
     }
 
     /**

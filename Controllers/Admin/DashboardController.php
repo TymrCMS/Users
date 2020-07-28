@@ -18,6 +18,9 @@ class DashboardController extends AdminController
     */
     public function index()
     {
-        return view("users::dashboard");
+        // Lets get some data for the dashboard
+        //$userData = Stats::fetchUserInfo();
+
+        return view("users::admin.dashboard");
     }
 }

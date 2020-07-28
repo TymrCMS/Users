@@ -40,13 +40,13 @@ class User extends Authenticatable
 
     public function profile()
     {
-        return $this->hasOne(\Tymr\Modules\Users\Models\UserProfile::class,'id');
+        return $this->hasOne( \Tymr\Modules\Users\Models\UserProfile::class,'id' );
     } 
 
 
     public function group()
     {
-        return $this->belongsTo(\Tymr\Modules\Users\Models\Group::class);
+        return $this->belongsTo( \Tymr\Modules\Users\Models\Group::class );
     } 
 
     public static function boot()
@@ -55,7 +55,7 @@ class User extends Authenticatable
 
         static::deleted(function ($model) 
         {
-            // Probably lazy load these relationships to avoid lots of queries?
+            // ?
             $model->load([ 'profile' ]);
 
             $model->profile()->delete();

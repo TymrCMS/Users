@@ -31,7 +31,7 @@ class UserPermissionsController extends AdminController
     {
         $roles = Role::all();
         $permissions = Permission::all();
-        return view("users::users.edit-permissions",compact('user','roles','permissions'));      
+        return view("users::admin.users.edit-permissions",compact('user','roles','permissions'));      
     }
 
     /**

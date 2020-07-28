@@ -10,7 +10,7 @@ use Redirect;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Tymr\Http\Controllers\AdminController;
-use SettingsHelper;
+use TymrSetting;
 use Tymr\Modules\Users\Models\Group;
 use Tymr\Modules\Users\Requests\GroupsRequest;
 
@@ -25,17 +25,17 @@ class GroupsController extends AdminController
 	public function index()
 	{
 
-		$perpage = SettingsHelper::value('results_per_page');
+		$perpage = TymrSetting::value('results_per_page');
 
 		$groups = Group::orderBy('id','asc')->paginate($perpage);
 		
-		return view("users::groups.index")->withGroups($groups);
+		return view("users::admin.groups.index")->withGroups($groups);
 	}
 
 
 	public function create()
 	{ 
-		return view("users::groups.create");
+		return view("users::admin.groups.create");
 	}
 
 	public function store(GroupsRequest $request)
@@ -63,7 +63,7 @@ class GroupsController extends AdminController
 	 */
 	public function show(Group $group)
 	{        
-		return view("users::groups.show")->withGroup($group);
+		return view("users::admin.groups.show")->withGroup($group);
 	}
 
 	/**
@@ -74,7 +74,7 @@ class GroupsController extends AdminController
 	 */
 	public function edit(Group $group)
 	{
-		return view("users::groups.edit")->withGroup($group);
+		return view("users::admin.groups.edit")->withGroup($group);
 	}
 
 	/**

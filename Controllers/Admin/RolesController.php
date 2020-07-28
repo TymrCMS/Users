@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
 
 use Tymr\Http\Controllers\AdminController;
-use SettingsHelper;
+use TymrSetting;
 use Tymr\Modules\Users\Models\User as User;
 use Tymr\Modules\Users\Models\Role as Role;
 use Tymr\Modules\Users\Models\Permission as Permission;
@@ -33,11 +33,11 @@ class RolesController extends AdminController
      */
     public function index()
     {
-        $perpage = SettingsHelper::value('results_per_page');
+        $perpage = TymrSetting::value('results_per_page');
 
         $roles = Role::orderBy('id','asc')->paginate($perpage);
         
-        return view("users::roles.index")->withRoles($roles);
+        return view("users::admin.roles.index")->withRoles($roles);
     }
 
 
@@ -48,7 +48,7 @@ class RolesController extends AdminController
      */
     public function create()
     { 
-        return view("users::roles.create");
+        return view("users::admin.roles.create");
     }
 
     /**
@@ -87,7 +87,7 @@ class RolesController extends AdminController
     {        
         $permissions = Permission::all();
 
-        return view("users::roles.show")->withRole($role)->withPermissions($permissions);        
+        return view("users::admin.roles.show")->withRole($role)->withPermissions($permissions);        
     }
 
     /**
@@ -100,7 +100,7 @@ class RolesController extends AdminController
     {
         $permissions = Permission::all();
 
-        return view("users::roles.edit")->withRole($role)->withPermissions($permissions); 
+        return view("users::admin.roles.edit")->withRole($role)->withPermissions($permissions); 
     }
 
     /**
